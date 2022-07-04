@@ -1,0 +1,368 @@
+---
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+    css: ["default", "custom.css"]
+    
+    
+---
+```{r include=FALSE}
+# Capa
+```
+
+
+<center><img src="img\CEFETlogo.png" height="100px" width="100px" /><center>
+<b><center><font face="Tahoma">Centro Federal de Educação Tecnológica de Minas Gerais</center>
+<center>Bacharelado em Administração</center>
+
+<br/>
+<br/>
+
+<center>Tales Siqueira da Cruz</center>
+
+<br/>
+<br/>
+
+<center><font size="6">HORÁRIO DE VERÃO NO BRASIL:</font></center></b>
+<center><font size="5">Uma análise sob a perspectiva da curva de carga elétrica horária</font></center>
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+<b><center>Belo Horizonte</center>
+<center>2022</center></b></font>
+---
+<br/>
+<font face="Tahoma"><font size="7"><b>Visão Geral</b>
+
+<br/>
+<br/>
+
+<font size="5"><ul>
+
+<b>1.</b> Introdução
+<br/>
+<br/>
+<b>2.</b> Referencial Teórico 
+<br/>
+<br/>
+<b>3.</b> Metodologia 
+<br/>
+<br/>
+<b>4.</b> Apresentação dos dados 
+<br/>
+<br/>
+<b>5.</b> Resultados 
+<br/>
+<br/>
+<b>6.</b> Considerações Finais 
+</ul>
+
+</font> </font>
+
+---
+
+<br/>
+<font face="Tahoma"><font size="7"><b>Introdução</b></font>
+
+<br/>
+<br/>
+
+<ul>
+<font size="5">
+<li> Motivação para pesquisar sobre o horário de verão e consumo de energia;</li> 
+<br/>
+<br/>
+<li>Objetivos iniciais do trabalho;</li> 
+<br/>
+<br/>
+<li>Relevância do tema.</li> 
+</font>
+</ul>
+
+---
+
+<br/>
+<font face="Tahoma"><font size="7"><b>Problema de pesquisa</font></b>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<font size="6">
+<center><b>Uma vez apresentado o SIN e seu funcionamento, questiona-se: </b>
+</font>
+
+<font size="5">
+<br/>
+<br/>
+Quais mudanças ocorreram no formato da curva de carga em função do fim do horário de verão? 
+<br/>
+Houve um aumento de consumo no horário de pico?
+</center>
+</font> </font>
+
+---
+
+<br/>
+<font face="Tahoma"><font size="7"><b>Objetivos</font></b>
+
+<br/>
+<br/>
+<br/>
+
+<font size="5">
+<center><b>Avaliar as mudanças induzidas no formato da curva de carga pelo fim do horário de verão e analisar se houve um aumento de consumo no horário de pico.</b>
+</center></font>
+
+<font size="5">
+<br/>
+<br/>
+<ul>
+<li>Tratar dados;</li>
+<br/>
+<li>Descrever sazonalidades;</li>
+<br/>
+<li>Identificar horário de ponta.</li>
+</ul>
+
+</font> </font>
+
+---
+
+<br/>
+<font face="Tahoma"><font size="7"><b>Referencial Teórico</font></b>
+
+<font size="6">
+<br/>
+<br/>
+<ul>
+<li>Surgimento do horário de verão;</li>
+<br/>
+<li>Vigência do horário de verão no Brasil;</li>
+<br/>
+<li>Comportamento da curva de carga elétrica horária;</li>
+<br/>
+<li>Análise dos casos Indiana (EUA) e Escócia.</li>
+</ul>
+
+</font>
+
+
+---
+<br/>
+<font face="Tahoma"><font size="7"><b>Metodologia</b></font></font>
+
+<center> $Y_th=\beta_0+\beta_1Temp_th+\beta_2D_tDom+\beta_3D_tSeg+\beta_4 D_tTer+\beta_5D_tQuar+\beta_6D_tQuin+$
+<center> $\beta_7D_tSex+\beta_8D_tSab+\beta_9 Har_th+\varepsilon_th$
+
+<center><img src="img\TABELAdummy.png" height="400px"/></center>
+
+
+---
+<br/>
+<font face="Tahoma"><font size="7"><b>Metodologia</b></font>
+<br/>
+
+<center> $$Temp_{th}=\frac{\sum_{i=1}^{8}x_i\times\left(\sum_{i=1}^{8}w_{ij}\right )/j}{\sum_{i=1}^{8}x_i}$$</center>
+
+<font face="Tahoma" size="6">
+
+Em que:
+<br/> 
+<ul>
+<br/><li> <i>i</i> corresponde a cada região;</li>
+<li><i>x</i> é a projeção populacional para a região <i>i</i>;</li>
+<li><i>w</i> corresponde à temperatura obtida para o horário <i>h</i> na estação;</li>
+<li>Algumas capitais contêm mais de um ponto de coleta <i>j</i>.</li>
+</ul>
+
+</font>
+
+---
+
+
+```{r fig.height=8, fig.width=10, message=FALSE, warning=FALSE, include=FALSE}
+library(tidyverse)
+# Exibir os graficos em Tahoma
+# windowsFonts(A = windowsFont("Tahoma")) 
+# dummies de dias da semana
+hora0 = c(9934.70, 9194.17, 11675.98, 11992.07, 12150.20, 12249.31, 12170.66)
+hora1 = c(8574, 8096.12, 10193.40, 10438.65, 10515.96, 10602.19, 10583.18)
+hora2 = c(8306.68, 8200.15, 10047.44, 10255.38, 10329.36, 10416.59, 10284.97)
+hora3 = c(8773.49, 9049.31, 10788.10, 10966.31, 11072.74, 11107.03, 10841.25)
+hora4 = c(9733.87, 10614.72, 12297.93, 12456.18, 12568.50, 12583.07, 11957.35)
+hora5 = c(12098.32, 14504.34, 16022.83, 16215.05, 16285.10, 16242.35, 14710.94)
+hora6 = c(13652.53, 18543.74, 19864.25, 20103.03, 20135.14, 19983.39, 17053.37)
+hora7 = c(12625.66, 19659.50, 20833.26, 21095.07, 21073.24, 20875.66, 17016.61)
+hora8 = c(12502.16, 20994.37, 21934.35, 22182.64, 22136.00, 21962.18, 17501.04)
+hora9 = c(13077.41, 22165.57, 22891.52, 23128.68, 23062.12, 22911.90, 18346.71)
+hora10 = c(14609.53, 23883.38, 24515.01, 24746.64, 24680.35, 24513.13, 19724.65)
+hora11 = c(14184.59, 22960.85, 23497.30, 23747.96, 23689.99, 23519.88, 18804.83)
+hora12 = c(13499.19, 21855.66, 22351.98, 22577.78, 22520.98, 22466.20, 17935.25)
+hora13 = c(11998.14, 21424.31, 21965.55, 22280.94, 22158.99, 22054.06, 16581.79)
+hora14 = c(11323.78, 21458.09, 22027.77, 22348.32, 22245.21, 22019.58, 15878.30)
+hora15 = c(12549.46, 22560.09, 23122.68, 23412.80, 23388.92, 22888.46, 16868.98)
+hora16 = c(15784.79, 24723.10, 25274.71, 25535.91, 25524.62, 24599.31, 19487.27)
+hora17 = c(23475.18, 29433.33, 29954.19, 30198.43, 30212.76, 29587.04, 26549.53)
+hora18 = c(32180.98, 36158.91, 36669.48, 36941.08, 36946.51, 36386.63, 34941.20)
+hora19 = c(29548.53, 33506.33, 33901.95, 33988.37, 34051.33, 33479.31, 32172.54)
+hora20 = c(25299.93, 29455.04, 29784.34, 29896.46, 29796.23, 29072.63, 27199.49)
+hora21 = c(20913.16, 25281.88, 25650.69, 25730.65, 25641.81, 24802.37, 22087.74)
+hora22 = c(16004.61, 19789.43, 20155.46, 20349.03, 20241.84, 19624.75, 16681.41)
+hora23 = c(11653.26, 14754.62, 15131.94, 15284.77, 15425.56, 15148.16, 12567.51)
+
+horario = c(rep("1 - Domingo", 24), rep("2 - Segunda", 24), 
+            rep("3 - Terça",   24), rep("4 - Quarta",  24), 
+            rep("5 - Quinta",  24), rep("6 - Sexta",   24),
+            rep("7 - Sábado",  24))
+auxDummie = matrix(NA, 24, 7)
+
+auxDummie[1,] = hora0
+auxDummie[2,] = hora1
+auxDummie[3,] = hora2
+auxDummie[4,] = hora3
+auxDummie[5,] = hora4
+auxDummie[6,] = hora5
+auxDummie[7,] = hora6
+auxDummie[8,] = hora7
+auxDummie[9,] = hora8
+auxDummie[10,] = hora9
+auxDummie[11,] = hora10
+auxDummie[12,] = hora11
+auxDummie[13,] = hora12
+auxDummie[14,] = hora13
+auxDummie[15,] = hora14
+auxDummie[16,] = hora15
+auxDummie[17,] = hora16
+auxDummie[18,] = hora17
+auxDummie[19,] = hora18
+auxDummie[20,] = hora19
+auxDummie[21,] = hora20
+auxDummie[22,] = hora21
+auxDummie[23,] = hora22
+auxDummie[24,] = hora23
+
+dummie = c(auxDummie[,1], auxDummie[,2], auxDummie[,3], auxDummie[,4], 
+           auxDummie[,5], auxDummie[,6], auxDummie[,7])
+
+representacao = data.frame(x = horario, y = dummie)
+
+h = c(1:168)
+hora = c("0h", "1h", "2h", "3h", "4h", "5h", "6h", "7h", "8h", "9h", 
+         "10h" ,"11h", "12h", "13h", "14h", "15h", "16h", "17h","18h",
+         "19h", "20h", "21h", "22h", "23h")
+horas = rep(hora, 7)
+names(h) = horas
+
+tempoHora = rep(c(seq(as.Date("01-01-2017",format="%d-%m-%Y"),
+                      as.Date("31-12-2021",format="%d-%m-%Y"),
+                      by="day")), 6)
+
+# install.packages("colorspace", repos = "http://cran.us.r-project.org")
+# install.packages("ggplot2", repos = "http://cran.us.r-project.org")
+# install.packages("gganimate", repos = "http://cran.us.r-project.org")
+# install.packages("gifski", repos = "http://cran.us.r-project.org")
+# install.packages("av", repos = "http://cran.us.r-project.org")
+
+library(colorspace)
+library(ggplot2)
+library(gganimate)
+library(gifski)
+
+graphdummy = ggplot(data = representacao) +
+  geom_point(data = representacao, aes(x = h, y = dummie, color = representacao$x)) +
+  transition_reveal(h) + 
+  shadow_wake(wake_length = 2, size = 3) +
+  facet_wrap(~ representacao$x, nrow = 7, scales = "free") +
+  labs(color = "Dia da semana", title = "Valores dos coeficientes das variáveis dummy de dias da semana") +
+  theme(text = element_text(family = "A")) +
+  scale_y_continuous("Coeficiente", limits = c(8000, 40000), 
+                     breaks = waiver(), n.breaks = 4) +
+  scale_x_continuous("Período (horas)", h)
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+animate(graphdummy, fps = 3, end_pause = 15, renderer = gifski_renderer(), width = 800, height = 600)
+```
+
+
+---
+```{r echo=FALSE, fig.height=8, fig.width=10, message=FALSE, warning=FALSE}
+ggplot(data = representacao) +
+  geom_point(data = representacao, aes(x = h, y = dummie, color = representacao$x)) +
+  facet_wrap(~ representacao$x, nrow = 7, scales = "free") +
+  labs(color = "Dia da semana", title = "Valores dos coeficientes das variáveis dummy de dias da semana") +
+  theme(text = element_text(family = "A")) +
+  scale_y_continuous("Coeficiente", limits = c(8000, 40000), 
+                     breaks = waiver(), n.breaks = 4) +
+  scale_x_continuous("Período (horas)", h)
+```
+---
+```{r echo=FALSE, fig.height=8, fig.width=10, message=FALSE, warning=FALSE}
+horario_verao = c(-652, -503, -300, -92, 285, 692, 1064, 889, 531, 332, -202, 
+                  -277, 458, 800, 851, 849, 343, -502, -2629, -2072, -457, -595,
+                  -566, -620)
+
+horarioVerao = data.frame(x = c(0:23), y = horario_verao)
+
+ggplot(data = horarioVerao) +
+  geom_point(aes(x = horarioVerao$x, y = horarioVerao$y)) +
+  labs(title = "Valores da variável dummy de horário de verão ") +
+  transition_reveal(horarioVerao$x) + 
+  shadow_wake(wake_length = 0.5, size = 3) +
+  theme(text = element_text(family = "A")) +
+  scale_y_continuous("Coeficiente", breaks = waiver(), n.breaks = 20) +
+  scale_x_continuous("Período (horas)", horarioVerao$x) +
+  geom_hline(yintercept = 0)
+
+```
+---
+```{r echo=FALSE, fig.height=8, fig.width=10, message=FALSE, warning=FALSE}
+ggplot(data = horarioVerao) +
+  geom_point(aes(x = horarioVerao$x, y = horarioVerao$y)) +
+  theme(text = element_text(family = "A")) +
+  labs(title = "Valores da variável dummy de horário de verão ") +
+  scale_y_continuous("Coeficiente", breaks = waiver(), n.breaks = 20) +
+  scale_x_continuous("Período (horas)", horarioVerao$x) +
+  geom_hline(yintercept = 0)
+
+```
+---
+<br/>
+<font face="Tahoma"><font size="7"><b>Conclusão</b></font></font>
+
+<font face="Tahoma" size="6">
+
+<br/>
+<br/>
+
+<ul>
+<br/><li> Os resultados demonstram relevância com a aplicação do horário de verão;</li><br/>
+<li> A economia com o uso da medida deve ser considerada; </li><br/>
+<li> Outros fatores devem ser considerados a fim de incrementar a pesquisa.</li>
+</ul>
+
+</font>
+---
+
+<br/>
+<font face="Tahoma"><font size="7"><b>Referências</b></font>
+
+<font size="5">
+<br/>
+<br/>
+INSTITUTO NACIONAL DE METEOROLOGIA. INMET. <b>Dados históricos anuais</b>. Disponível em: < https://portal.inmet.gov.br/dadoshistoricos>. Acesso em: 16 jan. 2022.
+
+<br/>
+<br/>
+OPERADOR NACIONAL DO SISTEMA ELÉTRICO. <b>Curva de Carga Horária</b>. Disponível em: < http://www.ons.org.br/Paginas/resultados-da-operacao/historico-da-operacao/curva_carga_horaria.aspx>. Acesso em: 04 nov. 2021. </font></font>

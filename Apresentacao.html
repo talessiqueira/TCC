@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Apresentacao.knit</title>
+    <meta charset="utf-8" />
+    <script src="libs/header-attrs-2.13/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="custom.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+&lt;center&gt;&lt;img src="img\CEFETlogo.png" height="100px" width="100px" /&gt;&lt;center&gt;
+&lt;b&gt;&lt;center&gt;&lt;font face="Tahoma"&gt;Centro Federal de Educação Tecnológica de Minas Gerais&lt;/center&gt;
+&lt;center&gt;Bacharelado em Administração&lt;/center&gt;
+
+&lt;br/&gt;
+&lt;br/&gt;
+
+&lt;center&gt;Tales Siqueira da Cruz&lt;/center&gt;
+
+&lt;br/&gt;
+&lt;br/&gt;
+
+&lt;center&gt;&lt;font size="6"&gt;HORÁRIO DE VERÃO NO BRASIL:&lt;/font&gt;&lt;/center&gt;&lt;/b&gt;
+&lt;center&gt;&lt;font size="5"&gt;Uma análise sob a perspectiva da curva de carga elétrica horária&lt;/font&gt;&lt;/center&gt;
+
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+
+&lt;b&gt;&lt;center&gt;Belo Horizonte&lt;/center&gt;
+&lt;center&gt;2022&lt;/center&gt;&lt;/b&gt;&lt;/font&gt;
+---
+&lt;br/&gt;
+&lt;font face="Tahoma"&gt;&lt;font size="7"&gt;&lt;b&gt;Visão Geral&lt;/b&gt;
+
+&lt;br/&gt;
+&lt;br/&gt;
+
+&lt;font size="5"&gt;&lt;ul&gt;
+
+&lt;b&gt;1.&lt;/b&gt; Introdução
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;b&gt;2.&lt;/b&gt; Referencial Teórico 
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;b&gt;3.&lt;/b&gt; Metodologia 
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;b&gt;4.&lt;/b&gt; Apresentação dos dados 
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;b&gt;5.&lt;/b&gt; Resultados 
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;b&gt;6.&lt;/b&gt; Considerações Finais 
+&lt;/ul&gt;
+
+&lt;/font&gt; &lt;/font&gt;
+
+---
+
+&lt;br/&gt;
+&lt;font face="Tahoma"&gt;&lt;font size="7"&gt;&lt;b&gt;Introdução&lt;/b&gt;&lt;/font&gt;
+
+&lt;br/&gt;
+&lt;br/&gt;
+
+&lt;ul&gt;
+&lt;font size="5"&gt;
+&lt;li&gt; Motivação para pesquisar sobre o horário de verão e consumo de energia;&lt;/li&gt; 
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;li&gt;Objetivos iniciais do trabalho;&lt;/li&gt; 
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;li&gt;Relevância do tema.&lt;/li&gt; 
+&lt;/font&gt;
+&lt;/ul&gt;
+
+---
+
+&lt;br/&gt;
+&lt;font face="Tahoma"&gt;&lt;font size="7"&gt;&lt;b&gt;Problema de pesquisa&lt;/font&gt;&lt;/b&gt;
+
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+
+&lt;font size="6"&gt;
+&lt;center&gt;&lt;b&gt;Uma vez apresentado o SIN e seu funcionamento, questiona-se: &lt;/b&gt;
+&lt;/font&gt;
+
+&lt;font size="5"&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+Quais mudanças ocorreram no formato da curva de carga em função do fim do horário de verão? 
+&lt;br/&gt;
+Houve um aumento de consumo no horário de pico?
+&lt;/center&gt;
+&lt;/font&gt; &lt;/font&gt;
+
+---
+
+&lt;br/&gt;
+&lt;font face="Tahoma"&gt;&lt;font size="7"&gt;&lt;b&gt;Objetivos&lt;/font&gt;&lt;/b&gt;
+
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+
+&lt;font size="5"&gt;
+&lt;center&gt;&lt;b&gt;Avaliar as mudanças induzidas no formato da curva de carga pelo fim do horário de verão e analisar se houve um aumento de consumo no horário de pico.&lt;/b&gt;
+&lt;/center&gt;&lt;/font&gt;
+
+&lt;font size="5"&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;ul&gt;
+&lt;li&gt;Tratar dados;&lt;/li&gt;
+&lt;br/&gt;
+&lt;li&gt;Descrever sazonalidades;&lt;/li&gt;
+&lt;br/&gt;
+&lt;li&gt;Identificar horário de ponta.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/font&gt; &lt;/font&gt;
+
+---
+
+&lt;br/&gt;
+&lt;font face="Tahoma"&gt;&lt;font size="7"&gt;&lt;b&gt;Referencial Teórico&lt;/font&gt;&lt;/b&gt;
+
+&lt;font size="6"&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;ul&gt;
+&lt;li&gt;Surgimento do horário de verão;&lt;/li&gt;
+&lt;br/&gt;
+&lt;li&gt;Vigência do horário de verão no Brasil;&lt;/li&gt;
+&lt;br/&gt;
+&lt;li&gt;Comportamento da curva de carga elétrica horária;&lt;/li&gt;
+&lt;br/&gt;
+&lt;li&gt;Análise dos casos Indiana (EUA) e Escócia.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/font&gt;
+
+
+---
+&lt;br/&gt;
+&lt;font face="Tahoma"&gt;&lt;font size="7"&gt;&lt;b&gt;Metodologia&lt;/b&gt;&lt;/font&gt;&lt;/font&gt;
+
+&lt;center&gt; `\(Y_th=\beta_0+\beta_1Temp_th+\beta_2D_tDom+\beta_3D_tSeg+\beta_4 D_tTer+\beta_5D_tQuar+\beta_6D_tQuin+\)`
+&lt;center&gt; `\(\beta_7D_tSex+\beta_8D_tSab+\beta_9 Har_th+\varepsilon_th\)`
+
+&lt;center&gt;&lt;img src="img\TABELAdummy.png" height="400px"/&gt;&lt;/center&gt;
+
+
+---
+&lt;br/&gt;
+&lt;font face="Tahoma"&gt;&lt;font size="7"&gt;&lt;b&gt;Metodologia&lt;/b&gt;&lt;/font&gt;
+&lt;br/&gt;
+
+&lt;center&gt; `$$Temp_{th}=\frac{\sum_{i=1}^{8}x_i\times\left(\sum_{i=1}^{8}w_{ij}\right )/j}{\sum_{i=1}^{8}x_i}$$`&lt;/center&gt;
+
+&lt;font face="Tahoma" size="6"&gt;
+
+Em que:
+&lt;br/&gt; 
+&lt;ul&gt;
+&lt;br/&gt;&lt;li&gt; &lt;i&gt;i&lt;/i&gt; corresponde a cada região;&lt;/li&gt;
+&lt;li&gt;&lt;i&gt;x&lt;/i&gt; é a projeção populacional para a região &lt;i&gt;i&lt;/i&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;i&gt;w&lt;/i&gt; corresponde à temperatura obtida para o horário &lt;i&gt;h&lt;/i&gt; na estação;&lt;/li&gt;
+&lt;li&gt;Algumas capitais contêm mais de um ponto de coleta &lt;i&gt;j&lt;/i&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/font&gt;
+
+---
+
+
+
+
+![](Apresentacao_files/figure-html/unnamed-chunk-3-1.gif)&lt;!-- --&gt;
+
+
+---
+![](Apresentacao_files/figure-html/unnamed-chunk-4-1.png)&lt;!-- --&gt;
+---
+![](Apresentacao_files/figure-html/unnamed-chunk-5-1.gif)&lt;!-- --&gt;
+---
+![](Apresentacao_files/figure-html/unnamed-chunk-6-1.png)&lt;!-- --&gt;
+---
+&lt;br/&gt;
+&lt;font face="Tahoma"&gt;&lt;font size="7"&gt;&lt;b&gt;Conclusão&lt;/b&gt;&lt;/font&gt;&lt;/font&gt;
+
+&lt;font face="Tahoma" size="6"&gt;
+
+&lt;br/&gt;
+&lt;br/&gt;
+
+&lt;ul&gt;
+&lt;br/&gt;&lt;li&gt; Os resultados demonstram relevância com a aplicação do horário de verão;&lt;/li&gt;&lt;br/&gt;
+&lt;li&gt; A economia com o uso da medida deve ser considerada; &lt;/li&gt;&lt;br/&gt;
+&lt;li&gt; Outros fatores devem ser considerados a fim de incrementar a pesquisa.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/font&gt;
+---
+
+&lt;br/&gt;
+&lt;font face="Tahoma"&gt;&lt;font size="7"&gt;&lt;b&gt;Referências&lt;/b&gt;&lt;/font&gt;
+
+&lt;font size="5"&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+INSTITUTO NACIONAL DE METEOROLOGIA. INMET. &lt;b&gt;Dados históricos anuais&lt;/b&gt;. Disponível em: &lt; https://portal.inmet.gov.br/dadoshistoricos&gt;. Acesso em: 16 jan. 2022.
+
+&lt;br/&gt;
+&lt;br/&gt;
+OPERADOR NACIONAL DO SISTEMA ELÉTRICO. &lt;b&gt;Curva de Carga Horária&lt;/b&gt;. Disponível em: &lt; http://www.ons.org.br/Paginas/resultados-da-operacao/historico-da-operacao/curva_carga_horaria.aspx&gt;. Acesso em: 04 nov. 2021. &lt;/font&gt;&lt;/font&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
